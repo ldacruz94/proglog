@@ -13,7 +13,7 @@ func NewHTTPServer(addr string) *http.Server {
 	r := mux.NewRouter()
 	r.HandleFunc("/", httpsrv.handleProduce).Methods("POST")
 	r.HandleFunc("/", httpsrv.handleConsume).Methods("GET")
-	
+
 	return &http.Server{
 		Addr:    addr,
 		Handler: r,
@@ -25,6 +25,8 @@ type httpServer struct {
 }
 
 func newHTTPServer() *httpServer {
+	println("Running HTTP server...")
+	println("Listening on port 8080")
 	return &httpServer{
 		log: NewLog(),
 	}
