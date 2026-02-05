@@ -15,6 +15,7 @@ func TestStoreAppendRead(t *testing.T) {
 
 	c := Config{}
 	c.Segment.MaxStoreBytes = 1024
+	c.Segment.MaxIndexBytes = 1024
 	idx, err := newIndex(f, c)
 	require.NoError(t, err)
 
