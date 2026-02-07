@@ -56,7 +56,7 @@ func (s *store) Append(p []byte) (n uint64, pos uint64, err error) {
 	}
 
 	w += lenWidth
-	s.size += uint64(64)
+	s.size += uint64(w)
 	return uint64(w), pos, nil
 }
 
